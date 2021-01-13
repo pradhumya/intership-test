@@ -10,3 +10,5 @@ with open('input/main.csv', 'r') as file:
         for row in reader:
             if ('USA' in row[8]):
                 fc_writer.writerow(row)
+
+print("Please check output/filteredCountry.csv")

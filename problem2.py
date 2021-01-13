@@ -13,7 +13,7 @@ with open('output/filteredCountry.csv', 'r') as input_file:
             try:
                 price = float(price[1:])
             except ValueError:
-                print (price + " Given Price can't be converted")
+                print ("Error : " + price + " can't be converted.")
                 continue
             # print(price)
             if (row[0] in dict_sku.keys()):
@@ -26,11 +26,13 @@ with open('output/filteredCountry.csv', 'r') as input_file:
             new_row = []
             new_row.append(key)
             value.sort()
-            print(value[0])
+            # print(value[0])
             new_row.append(value[0])
             if (len(value) > 1):
-                print("2nd val -> " + str(value[1]))
+                # print("2nd val -> " + str(value[1]))
                 new_row.append(value[1])
             else:
                 new_row.append("NO 2nd Item")
             lp_writer.writerow(new_row)
+
+print("Please check output/lowestPrice.csv")
